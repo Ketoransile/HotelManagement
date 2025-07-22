@@ -6,7 +6,7 @@ export default function Loading() {
   const dots = [0, 1, 2, 3];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+    <div className="min-h-screen flex items-center justify-center bg-white ">
       <div className="flex items-center gap-3">
         {dots.map((index) => (
           <motion.div
