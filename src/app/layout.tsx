@@ -2,26 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
-import { Playfair_Display, Lato } from "next/font/google";
-import { Merriweather, Open_Sans } from "next/font/google";
+import { Lato } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-merriweather",
-  display: "swap",
-});
 
 const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-open-sans",
-  display: "swap",
-});
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700"], // adjust weights as needed
-  variable: "--font-playfair",
   display: "swap",
 });
 

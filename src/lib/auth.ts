@@ -6,7 +6,10 @@ import { admin as adminPlugin } from "better-auth/plugins";
 
 const client = await connectDB();
 export const auth = betterAuth({
+  // Async function to provide the database adapter
+
   database: mongodbAdapter(client.db()),
+
   plugins: [nextCookies(), adminPlugin()],
   emailAndPassword: {
     enabled: true,

@@ -20,7 +20,7 @@ export async function connectDB() {
       return cachedClient;
     }
 
-    await mongoose.connect(URI, {
+    await mongoose.connect(URI!, {
       // dbName: "CarRentalDB",
       // useNewUrlParser: true,
       // useUnifiedTopology: true,

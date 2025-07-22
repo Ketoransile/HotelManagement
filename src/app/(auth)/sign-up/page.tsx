@@ -98,7 +98,13 @@ const Singup = () => {
         throw new Error(error.message || "Signup failed");
       }
     } catch (err) {
-      toast.error(err.message || "An unexpected error occurred");
+      let errorMessage = "An unexpected error occurred";
+      if (typeof err === "object" && err !== null && "message" in err) {
+        errorMessage = (err as { message: string }).message;
+      } else if (typeof err === "string") {
+        errorMessage = err;
+      }
+      toast.error(errorMessage);
       console.error("Signup error:", err);
     } finally {
       setIsLoading(false);
