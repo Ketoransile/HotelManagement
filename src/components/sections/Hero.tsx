@@ -76,7 +76,7 @@ export const Hero = () => {
     // Uses flexbox for layout, reversing order on small screens (mobile-first)
     // Ensures minimum screen height, adds horizontal padding, and sets text color
     // Added a subtle background gradient for a modern touch
-    <div className="relative flex flex-col md:flex-row items-center justify-center min-h-screen px-6 md:px-12 py-12 text-black bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <div className="relative flex flex-col md:flex-row items-center  min-h-screen px-6 md:px-12 py-12 text-black bg-gradient-to-br from-gray-50 to-white overflow-hidden">
       {/* Background overlay for subtle effect */}
       <div className="absolute inset-0 bg-pattern-dots opacity-5 pointer-events-none"></div>
 

@@ -35,7 +35,7 @@ const Header = () => {
   } = authClient.useSession();
 
   return (
-    <header className="z-20 sticky top-0 flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 py-4 backdrop-blur-md bg-white/80 shadow-sm font-sans">
+    <header className="z-20 sticky top-0 flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-20 py-4 backdrop-blur-md md:bg-white/40 bg-white/90 shadow-sm font-sans">
       {/* Logo */}
       <Link
         href="/"
