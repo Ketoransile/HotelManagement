@@ -41,7 +41,7 @@ const Header = () => {
         href="/"
         className="text-black  font-semibold text-2xl tracking-tight"
       >
-        Veloria
+        River
       </Link>
 
       {/* Desktop Nav */}
@@ -87,7 +87,7 @@ const Header = () => {
             {/* Header */}
             <DrawerHeader className="px-5 py-4 border-b border-neutral-200 bg-white">
               <DrawerTitle className="text-xl font-bold text-black">
-                Veloria
+                River
               </DrawerTitle>
             </DrawerHeader>
 
