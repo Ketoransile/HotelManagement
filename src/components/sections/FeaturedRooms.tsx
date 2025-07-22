@@ -71,8 +71,8 @@ export const FeaturedRooms = () => {
                   <Image
                     src={room.image}
                     alt={room.name}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="hover:scale-105 transition-transform duration-500 ease-in-out"
                   />
                 ) : (

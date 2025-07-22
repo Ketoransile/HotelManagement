@@ -157,8 +157,8 @@ export const Services = () => {
             <Image
               src={service.image}
               alt={service.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
               className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-105"
             />
 

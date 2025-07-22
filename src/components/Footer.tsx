@@ -11,7 +11,7 @@ const Footer = () => {
           <Image
             src="https://images.pexels.com/photos/594077/pexels-photo-594077.jpeg" // Replace with actual logo URL
             alt="Hotel Logo"
-            className="h-72 w-96 object-contain rounded-full "
+            className="h-44 w-44 object-fill rounded-full "
             width={200}
             height={200}
           />

@@ -26,8 +26,8 @@ export const FoodCard = ({
           <Image
             src={image}
             alt={name}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             className="hover:scale-105 transition-transform duration-500 ease-in-out"
           />
         ) : (
