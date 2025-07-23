@@ -15,7 +15,8 @@ const GridSpecCard = ({ imageUrl, title, sub }: RoomCardProps) => {
           alt={title}
           width={100}
           height={100}
-          className="w-full h-full object-cover"
+          style={{ objectFit: "cover" }}
+          className="w-full h-full  rounded-full"
         />
       </div>
 

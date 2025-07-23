@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${openSans.variable} ${lato.variable} antialiased`}>
         <Header />
-        <main className="max-sm:px-2 sm:px-6 md:px-10  lg:px-20 ">
+        <main className="max-sm:px-4 sm:px-8 md:px-10  lg:px-20 ">
           {children}
         </main>
         <Toaster />

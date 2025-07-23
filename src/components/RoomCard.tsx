@@ -2,7 +2,7 @@ import Image from "next/image";
 import {
   Card,
   CardHeader,
-  CardFooter,
+  // CardFooter,
   CardTitle,
   CardDescription,
   CardContent,
