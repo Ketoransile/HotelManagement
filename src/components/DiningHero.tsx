@@ -34,6 +34,20 @@ export const DiningHero = () => {
   return (
     // Added more vertical padding and consistent horizontal padding
     <div className="w-full flex max-lg:flex-col  items-center justify-between py-12 px-6 lg:px-12">
+      {/* Text on the right */}
+      <div className="flex flex-col gap-5 text-center lg:text-left">
+        <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-7xl font-extrabold leading-snug">
+          We Serve The Taste You Love
+        </h1>
+        <p className="text-md sm:text-lg max-w-xl leading-relaxed text-gray-700 mx-auto lg:mx-0">
+          This is a type of Hotel which typically serves food and drinks, in
+          addition to light refreshment such as baked goods or snacks. The term
+          comes from the French word meaning food.
+        </p>
+        <Button className="bg-blue-600 text-white font-semibold w-fit px-14 py-3.5 mt-2 rounded-lg shadow-md hover:bg-blue-700 transition-colors mx-auto lg:mx-0">
+          Explore Food
+        </Button>
+      </div>{" "}
       {/* Image on the left for lg:flex-row-reverse */}
       <div className="mb-12 lg:mb-0 lg:ml-16">
         {" "}
@@ -45,20 +59,6 @@ export const DiningHero = () => {
           alt="dining-page-hero-img"
           className="w-[400px] h-[400px] sm:w-[550px] sm:h-[550px] object-contain"
         />
-      </div>
-      {/* Text on the right */}
-      <div className="flex flex-col gap-5 text-center lg:text-left">
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-snug">
-          We Serve The Taste You Love
-        </h1>
-        <p className="text-md sm:text-lg max-w-xl leading-relaxed text-gray-700 mx-auto lg:mx-0">
-          This is a type of Hotel which typically serves food and drinks, in
-          addition to light refreshment such as baked goods or snacks. The term
-          comes from the French word meaning food.
-        </p>
-        <Button className="bg-blue-600 text-white font-semibold w-fit px-14 py-3.5 mt-2 rounded-lg shadow-md hover:bg-blue-700 transition-colors mx-auto lg:mx-0">
-          Explore Food
-        </Button>
       </div>
     </div>
   );
