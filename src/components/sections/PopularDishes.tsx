@@ -1,3 +1,4 @@
+"use client";
 import { FoodCard } from "../FoodCard";
 
 export const PopularDishes = () => {
@@ -57,15 +58,17 @@ export const PopularDishes = () => {
   return (
     <div className="w-full min-h-screen bg-gray-100 flex flex-col items-center py-10 font-sans">
       <h1 className="text-4xl font-bold text-gray-800 mb-10">Popular Dishes</h1>
-      <div className="grid grid-cols-1  md:grid-cols-3 justify-center">
+      {/* <div className="w-full grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-y-10 items-center justify-between"> */}
+      <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
         {dishes.map((dish) => (
           <FoodCard
             key={dish.id}
             image={dish.image}
-            name={dish.name}
+            title={dish.name}
             description={dish.description}
             price={dish.price}
             rating={dish.rating}
+            onAddToCart={() => console.log(`Added ${dish.name} to cart`)}
           />
         ))}
       </div>

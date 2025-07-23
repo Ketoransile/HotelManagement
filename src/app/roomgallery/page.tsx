@@ -501,8 +501,8 @@ const RoomExploration = () => {
         <Image
           src="/rooms/room_detail.jpg"
           alt="hero photo"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="z-0 blur-[3px]"
           priority // Add priority for LCP image
         />
