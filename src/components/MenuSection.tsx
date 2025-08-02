@@ -3,6 +3,14 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FoodCard } from "./FoodCard"; // Assuming FoodCard is in the same or a parent directory
 import { cn } from "@/lib/utils"; // Assuming you have utils.js in "@/lib" for combining classNames
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 const menuCategories = [
   "All",
@@ -357,27 +365,139 @@ const allFoods = [
   },
 ];
 
-export const MenuSection = () => {
-  // Function to determine initial active tab ("All" as default or "Japanese" if that's desired)
-  const getDefaultTabValue = () => {
-    // If you want "Japanese" to be default, uncomment the below and comment out the "All" part
-    // const japaneseCategory = menuCategories.find(cat => cat.toLowerCase() === 'japanese');
-    // return japaneseCategory ? japaneseCategory.toLowerCase().replace(/\s+/g, "") : menuCategories[0].toLowerCase().replace(/\s+/g, "");
+// export const MenuSection = () => {
+//   // Function to determine initial active tab ("All" as default or "Japanese" if that's desired)
+//   const getDefaultTabValue = () => {
+//     // If you want "Japanese" to be default, uncomment the below and comment out the "All" part
+//     // const japaneseCategory = menuCategories.find(cat => cat.toLowerCase() === 'japanese');
+//     // return japaneseCategory ? japaneseCategory.toLowerCase().replace(/\s+/g, "") : menuCategories[0].toLowerCase().replace(/\s+/g, "");
 
-    // Set "All" as the default active tab
-    return "all";
-  };
+//     // Set "All" as the default active tab
+//     return "all";
+//   };
+
+//   return (
+//     <section className="w-full bg-gray-100 py-10 font-sans px-6">
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+//         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+//           Our Regular menu pack
+//         </h2>
+
+//         <Tabs defaultValue={getDefaultTabValue()}>
+//           {/* Modified TabsList with responsive behavior */}
+//           {/* <TabsList className="w-full flex flex-wrap justify-center gap-2 mb-6"> */}
+//           <TabsList className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-6 h-fit">
+//             {menuCategories.map((category) => (
+//               <TabsTrigger
+//                 key={category}
+//                 value={category.toLowerCase().replace(/\s+/g, "")}
+//                 className={cn(
+//                   "px-5 py-2 rounded-full text-sm font-medium transition-colors",
+//                   "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100",
+//                   "data-[state=active]:bg-blue-600 data-[state=active]:border-blue-600 data-[state=active]:text-white",
+//                   "min-w-max" // Ensures text doesn't wrap inside buttons
+//                 )}
+//               >
+//                 {category}
+//               </TabsTrigger>
+//             ))}
+//           </TabsList>
+
+//           {/* Rest of your content remains the same */}
+//           <div className="max-md:hidden">
+//             {menuCategories.map((category) => (
+//               <TabsContent
+//                 key={category}
+//                 value={category.toLowerCase().replace(/\s+/g, "")}
+//                 className="pt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 justify-items-center"
+//               >
+//                 {allFoods
+//                   .filter((food) =>
+//                     category.toLowerCase() === "all"
+//                       ? true
+//                       : food.category.toLowerCase() === category.toLowerCase()
+//                   )
+//                   .map((food) => (
+//                     <FoodCard
+//                       key={food.id}
+//                       image={food.image}
+//                       title={food.name}
+//                       description={food.description}
+//                       price={food.price}
+//                       rating={food.rating}
+//                       onAddToCart={() =>
+//                         console.log(`Added ${food.name} to cart`)
+//                       }
+//                     />
+//                   ))}
+//               </TabsContent>
+//             ))}
+//           </div>
+//           <div className="md:hidden">
+//              {menuCategories.map((category) => (
+//               <TabsContent
+//                 key={category}
+//                 value={category.toLowerCase().replace(/\s+/g, "")}
+//                 className="pt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 justify-items-center"
+//               >
+//             <div className="w-full md:hidden relative ">
+//               <Carousel
+//                 opts={{ align: "start", loop: true }}
+//                 className="w-full max-w-full p-2 border-none"
+//               >
+//                 <CarouselContent className="w-fit">
+//                   {allFoods
+//                     .filter((food) =>
+//                       category.toLowerCase() === "all"
+//                         ? true
+//                         : food.category.toLowerCase() === category.toLowerCase()
+//                     )
+//                     .map((dish) => (
+//                       <CarouselItem
+//                         key={dish.id}
+//                         className="basis-1/3 border-none"
+//                       >
+//                         <div className="p-0">
+//                           <Card className="p-0 border-none">
+//                             <CardContent className="p-0">
+//                               <FoodCard
+//                                 image={dish.image}
+//                                 title={dish.name}
+//                                 description={dish.description}
+//                                 price={dish.price}
+//                                 rating={dish.rating}
+//                                 onAddToCart={() =>
+//                                   console.log(`Added ${dish.name} to cart`)
+//                                 }
+//                               />
+//                             </CardContent>
+//                           </Card>
+//                         </div>
+//                       </CarouselItem>
+//                     ))}
+//                 </CarouselContent>
+//                 <CarouselPrevious className="absolute left-2 -top-6" />
+//                 <CarouselNext className="absolute -top-6 right-2" />
+//               </Carousel>
+//             </div>
+//           </div> ))}
+//               </TabsContent>
+//         </Tabs>
+//       </div>
+//     </section>
+//   );
+// };
+export const MenuSection = () => {
+  const getDefaultTabValue = () => "all";
 
   return (
-    <section className="w-full bg-gray-100 py-10 font-sans px-6">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gray-100 py-10 font-sans ">
+      <div className="w-full container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
           Our Regular menu pack
         </h2>
-
         <Tabs defaultValue={getDefaultTabValue()}>
-          {/* Modified TabsList with responsive behavior */}
-          <TabsList className="w-full flex flex-wrap justify-center gap-2 mb-6">
+          <TabsList className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-6 h-fit">
             {menuCategories.map((category) => (
               <TabsTrigger
                 key={category}
@@ -386,40 +506,127 @@ export const MenuSection = () => {
                   "px-5 py-2 rounded-full text-sm font-medium transition-colors",
                   "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100",
                   "data-[state=active]:bg-blue-600 data-[state=active]:border-blue-600 data-[state=active]:text-white",
-                  "min-w-max" // Ensures text doesn't wrap inside buttons
+                  "min-w-max"
                 )}
               >
                 {category}
               </TabsTrigger>
             ))}
           </TabsList>
-
-          {/* Rest of your content remains the same */}
           {menuCategories.map((category) => (
             <TabsContent
               key={category}
               value={category.toLowerCase().replace(/\s+/g, "")}
-              className="pt-18 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 justify-items-center"
             >
-              {allFoods
-                .filter((food) =>
-                  category.toLowerCase() === "all"
-                    ? true
-                    : food.category.toLowerCase() === category.toLowerCase()
-                )
-                .map((food) => (
-                  <FoodCard
-                    key={food.id}
-                    image={food.image}
-                    title={food.name}
-                    description={food.description}
-                    price={food.price}
-                    rating={food.rating}
-                    onAddToCart={() =>
-                      console.log(`Added ${food.name} to cart`)
-                    }
-                  />
-                ))}
+              {/* Desktop Grid (md and up) */}
+              <div className="hidden md:grid pt-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 justify-items-center">
+                {allFoods
+                  .filter((food) =>
+                    category.toLowerCase() === "all"
+                      ? true
+                      : food.category.toLowerCase() === category.toLowerCase()
+                  )
+                  .map((food) => (
+                    <FoodCard
+                      key={food.id}
+                      image={food.image}
+                      title={food.name}
+                      description={food.description}
+                      price={food.price}
+                      rating={food.rating}
+                      onAddToCart={() =>
+                        console.log(`Added ${food.name} to cart`)
+                      }
+                    />
+                  ))}
+              </div>
+              {/* Mobile Carousel (hidden on md and up) */}
+              {/* <div className="w-full md:hidden relative pt-12">
+                <Carousel
+                  opts={{ align: "start", loop: true }}
+                  className="w-full max-w-full p-2 border-none"
+                >
+                  <CarouselContent className="w-fit">
+                    {allFoods
+                      .filter((food) =>
+                        category.toLowerCase() === "all"
+                          ? true
+                          : food.category.toLowerCase() ===
+                            category.toLowerCase()
+                      )
+                      .map((dish) => (
+                        // <CarouselItem
+                        //   key={dish.id}
+                        //   className="basis-1/2 sm:basis-1/3"
+                        // >
+                        <CarouselItem
+                          key={dish.id}
+                          className="basis-1/3 border-none"
+                        >
+                          <div className="p-0">
+                            <Card className="p-0 border-none">
+                              <CardContent className="p-0">
+                                <FoodCard
+                                  image={dish.image}
+                                  title={dish.name}
+                                  description={dish.description}
+                                  price={dish.price}
+                                  rating={dish.rating}
+                                  onAddToCart={() =>
+                                    console.log(`Added ${dish.name} to cart`)
+                                  }
+                                />{" "}
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-2 -top-6" />
+                  <CarouselNext className="absolute -top-6 right-2" />
+                </Carousel>
+              </div> */}
+              <div className="w-full md:hidden relative pt-12">
+                <Carousel
+                  opts={{ align: "start", loop: true }}
+                  className="w-full max-w-full p-2 border-none"
+                >
+                  <CarouselContent className="w-fit">
+                    {allFoods
+                      .filter((food) =>
+                        category.toLowerCase() === "all"
+                          ? true
+                          : food.category.toLowerCase() ===
+                            category.toLowerCase()
+                      )
+                      .map((dish) => (
+                        <CarouselItem
+                          key={dish.id}
+                          className="basis-1/3 border-none"
+                        >
+                          <div className="p-0">
+                            <Card className="p-0 border-none">
+                              <CardContent className="p-0">
+                                <FoodCard
+                                  image={dish.image}
+                                  title={dish.name}
+                                  description={dish.description}
+                                  price={dish.price}
+                                  rating={dish.rating}
+                                  onAddToCart={() =>
+                                    console.log(`Added ${dish.name} to cart`)
+                                  }
+                                />{" "}
+                              </CardContent>
+                            </Card>
+                          </div>
+                        </CarouselItem>
+                      ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-2 -top-6" />
+                  <CarouselNext className="absolute -top-6 right-2" />
+                </Carousel>
+              </div>
             </TabsContent>
           ))}
         </Tabs>

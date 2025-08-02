@@ -94,9 +94,9 @@ export const Hero = () => {
         {/* "Book Your Stay" Call-to-Action Button */}
         <Button
           className="
-            bg-black text-white font-bold py-3 px-8 rounded-full
+            bg-black text-white font-bold py-6 px-8 rounded-full
             hover:bg-gray-800 transition-all duration-300 ease-in-out
-            shadow-lg hover:shadow-xl transform hover:-translate-y-1
+            shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer
           "
         >
           Book Your Stay

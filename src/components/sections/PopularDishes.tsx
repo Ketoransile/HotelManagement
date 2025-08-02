@@ -1,5 +1,13 @@
 "use client";
 import { FoodCard } from "../FoodCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const PopularDishes = () => {
   // Sample data for popular dishes
@@ -56,10 +64,10 @@ export const PopularDishes = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-gray-100 flex flex-col items-center py-10 font-sans">
+    <div className="w-full md:min-h-screen bg-gray-100 flex flex-col items-center py-10 font-sans">
       <h1 className="text-4xl font-bold text-gray-800 mb-10">Popular Dishes</h1>
       {/* <div className="w-full grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-y-10 items-center justify-between"> */}
-      <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+      <div className="hidden md:grid grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
         {dishes.map((dish) => (
           <FoodCard
             key={dish.id}
@@ -71,6 +79,38 @@ export const PopularDishes = () => {
             onAddToCart={() => console.log(`Added ${dish.name} to cart`)}
           />
         ))}
+      </div>
+      {/* Mobile Carousel */}
+      <div className="w-full md:hidden relative ">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full max-w-full p-2 border-none"
+        >
+          <CarouselContent className="w-fit">
+            {dishes.map((dish) => (
+              <CarouselItem key={dish.id} className="basis-1/3 border-none">
+                <div className="p-0">
+                  <Card className="p-0 border-none">
+                    <CardContent className="p-0">
+                      <FoodCard
+                        image={dish.image}
+                        title={dish.name}
+                        description={dish.description}
+                        price={dish.price}
+                        rating={dish.rating}
+                        onAddToCart={() =>
+                          console.log(`Added ${dish.name} to cart`)
+                        }
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-2 -top-6" />
+          <CarouselNext className="absolute -top-6 right-2" />
+        </Carousel>
       </div>
     </div>
   );
