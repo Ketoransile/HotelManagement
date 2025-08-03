@@ -23,20 +23,28 @@ import { useRouter } from "next/navigation"; // Assuming Next.js router for navi
 // Define the navigation items based on the provided image
 const navigations = [
   { key: "dashboard", label: "Dashboard", icon: MdDashboard },
-  { key: "my-bookings", label: "My Bookings", icon: MdOutlineBookmarks },
-  { key: "notifications", label: "Notification", icon: IoNotifications },
   {
-    key: "payments-invoices",
+    key: "dashboard/my-bookings",
+    label: "My Bookings",
+    icon: MdOutlineBookmarks,
+  },
+  {
+    key: "dashboard/notification",
+    label: "Notification",
+    icon: IoNotifications,
+  },
+  {
+    key: "dashboard/invoices-and-payments",
     label: "Payments & Invoices",
     icon: MdOutlinePayment,
   },
   {
-    key: "profile-settings",
+    key: "dashboard/profile-settings",
     label: "Profile Settings",
     icon: IoSettingsOutline,
   },
   {
-    key: "security-privacy",
+    key: "dashboard/security-and-privacy",
     label: "Security & Privacy",
     icon: MdOutlineSecurity,
   },
