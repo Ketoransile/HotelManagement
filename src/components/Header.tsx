@@ -116,6 +116,25 @@ const Header = () => {
                   </Link>
                 </DrawerClose>
               )}
+              {/* {session && (
+                <DrawerClose asChild>
+                  <Link href="/sign-in">
+                    <Button className="w-full mt-4 bg-black text-white hover:bg-neutral-800">
+                      Sign in
+                    </Button>
+                  </Link>
+                </DrawerClose>
+              )} */}
+              {!isPending && session && (
+                <DrawerClose asChild>
+                  <Button
+                    onClick={() => authClient.signOut()}
+                    className="w-full mt-4 bg-black text-white hover:bg-neutral-800"
+                  >
+                    Log out
+                  </Button>
+                </DrawerClose>
+              )}
             </nav>
 
             {/* Footer */}
