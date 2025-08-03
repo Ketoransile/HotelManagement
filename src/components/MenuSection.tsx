@@ -591,7 +591,7 @@ export const MenuSection = () => {
                   opts={{ align: "start", loop: true }}
                   className="w-full max-w-full p-2 border-none"
                 >
-                  <CarouselContent className="w-fit">
+                  <CarouselContent className="w-fitx">
                     {allFoods
                       .filter((food) =>
                         category.toLowerCase() === "all"
