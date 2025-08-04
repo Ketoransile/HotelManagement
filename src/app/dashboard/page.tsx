@@ -128,9 +128,9 @@
 import React from "react";
 import Image from "next/image";
 import {
-  LogOut,
-  User,
-  Edit,
+  // LogOut,
+  // User,
+  // Edit,
   Calendar,
   Star,
   CreditCard,

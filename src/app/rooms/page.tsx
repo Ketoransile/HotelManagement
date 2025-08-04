@@ -490,6 +490,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { IRoom } from "../../../models/Room";
+import { SquareKanban, Wifi } from "lucide-react";
 
 async function getRooms(): Promise<IRoom[]> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/rooms`, {
@@ -570,14 +571,14 @@ const RoomExploration = async () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {transformedRooms.map((room) => (
+            {transformedRooms.map((room, index) => (
               <RoomCard
-                key={room._id}
+                key={index}
                 imageUrl={room.images?.[0].url || "/placeholder-room.jpg"}
                 price={room.price}
                 title={`${room.roomType} - Room ${room.roomNumber}`}
                 description={room.description}
-                id={room._id}
+                id={String(room._id)}
                 features={room.features}
               />
             ))}

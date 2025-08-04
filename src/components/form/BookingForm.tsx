@@ -554,10 +554,10 @@ import { toast } from "sonner";
 export const formSchema = z
   .object({
     checkInDate: z.date({
-      required_error: "Please select a check-in date",
+      message: "Please select a check-in date",
     }),
     checkOutDate: z.date({
-      required_error: "Please select a check-out date",
+      message: "Please select a check-out date",
     }),
     numberOfGuests: z
       .number()
@@ -814,7 +814,7 @@ const BookingForm = ({ room, userId }: BookingFormProps) => {
           <Progress
             value={(availableRooms / 5) * 100}
             className="h-2 bg-gray-200"
-            indicatorClassName="bg-rose-500"
+            // indicatorClassName="bg-rose-500"
           />
         </div>
       )}
