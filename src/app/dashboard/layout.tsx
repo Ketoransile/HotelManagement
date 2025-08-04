@@ -176,7 +176,8 @@ export default function DashboardLayout({
   }: {
     closeOnClick?: boolean;
   }) => (
-    <nav>
+    <nav className="sticky top-20">
+      <h2 className="text-xl font-bold mb-8">Abraham Demisew</h2>
       <ul>
         {navItems.map((item, index) => {
           const isActive = pathname === item.href;
@@ -224,8 +225,8 @@ export default function DashboardLayout({
   return (
     <div className="bg-gray-100 min-h-screen flex font-['Inter']">
       {/* Desktop Sidebar */}
-      <aside className="hidden md:block w-64 bg-white p-6 shadow-md">
-        <h2 className="text-xl font-bold mb-8">My Account</h2>
+      <aside className="sticky top-20 hidden md:block w-64 bg-white p-6 shadow-md border border-neutral-200">
+        {/* <h2 className="text-xl font-bold mb-8">Abraham Demisew</h2> */}
         <SidebarContent />
       </aside>
 
