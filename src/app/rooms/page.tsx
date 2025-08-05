@@ -496,12 +496,14 @@ async function getRooms(): Promise<IRoom[]> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/rooms`, {
     cache: "no-store",
   });
-
+  // console.log("res from rooms page is", res);
+  // console.log("res.json from rooms page is ", res.json());
   if (!res.ok) {
-    throw new Error("Failed to fetch rooms");
+    return [];
+    // throw new Error("Failed to fetch rooms");
   }
-
-  return res.json();
+  const rooms = await res.json();
+  return rooms;
 }
 
 const RoomExploration = async () => {

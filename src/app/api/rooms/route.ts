@@ -12,7 +12,12 @@ export async function GET() {
     return NextResponse.json(rooms, { status: 200 });
   } catch (error) {
     console.log("unknown errors", error);
-    return NextResponse.json("Failed to fetch rooms.", { status: 500 });
+    return NextResponse.json(
+      { message: "Failed to fetch rooms.", error: error },
+      {
+        status: 500,
+      }
+    );
   }
 }
 
