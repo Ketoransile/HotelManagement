@@ -1,5 +1,5 @@
 import React from "react";
-import { User, Lock, Edit } from "lucide-react";
+// import { User, Lock, Edit } from "lucide-react";
 
 const ProfileSettingsPage = () => {
   return (

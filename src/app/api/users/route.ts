@@ -12,7 +12,7 @@ export async function GET() {
     const users: IUser[] = await User.find({});
     // This will return an array of user objects with fields like _id, name, email, etc.
     return NextResponse.json(users, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json("Failed to fetch users.", { status: 500 });
   }
 }

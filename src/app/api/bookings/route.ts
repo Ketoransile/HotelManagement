@@ -1,7 +1,7 @@
 // app/api/bookings/route.ts
 import { NextResponse } from "next/server";
 import Booking, { IBooking } from "../../../../models/Booking";
-import Room from "../../../../models/Room";
+// import Room from "../../../../models/Room";
 import { connectDB } from "@/lib/connectDB";
 
 // GET all bookings
@@ -11,6 +11,7 @@ export async function GET() {
     const bookings: IBooking[] = await Booking.find({}).populate("room"); // Populate the room details
     return NextResponse.json(bookings, { status: 200 });
   } catch (error) {
+    console.log("UNknown errors", error);
     return NextResponse.json("Failed to fetch bookings.", { status: 500 });
   }
 }
@@ -31,8 +32,14 @@ export async function POST(request: Request) {
 
     const newBooking: IBooking = await Booking.create(body);
     return NextResponse.json(newBooking, { status: 201 });
-  } catch (error: any) {
-    return NextResponse.json(`Failed to create booking: ${error.message}`, {
+  } catch (error: unknown) {
+    let message: string;
+    if (error instanceof Error) {
+      message = error.message;
+    } else {
+      message = String(error);
+    }
+    return NextResponse.json(`Failed to create booking: ${message}`, {
       status: 400,
     });
   }

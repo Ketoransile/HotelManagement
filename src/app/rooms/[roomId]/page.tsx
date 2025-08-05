@@ -1,18 +1,18 @@
-import RoomDetailCard from "@/components/RoomDetailCard";
+// import RoomDetailCard from "@/components/RoomDetailCard";
 import Image from "next/image";
 import Link from "next/link";
 import FacilityCard from "@/components/FacilityCard";
-import GridSpecCard from "@/components/GridSpecCard";
+// import GridSpecCard from "@/components/GridSpecCard";
 import BookingForm from "@/components/form/BookingForm";
 import { Button } from "@/components/ui/button";
 import {
   BedDouble,
   Wifi,
   Users,
-  Bath,
+  // Bath,
   Tv,
-  Coffee,
-  MapPin,
+  // Coffee,
+  // MapPin,
   Clock,
   Star,
 } from "lucide-react";

@@ -30,7 +30,7 @@ type FeatureIconName =
   | "breakfast";
 
 interface RoomFeature {
-  icon: FeatureIconName;
+  icon: string;
   text: string;
 }
 
@@ -39,7 +39,7 @@ interface RoomCardProps {
   price: number | string;
   title: string;
   description: string;
-  features: RoomFeature[];
+  features?: RoomFeature[];
   id: string;
   rating?: number;
 }
@@ -113,12 +113,12 @@ const RoomCard = ({
           {/* Features Section */}
           <CardContent className="p-0 mb-4">
             <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100">
-              {features.map((feature, index) => (
+              {features?.map((feature, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-2 text-gray-700 text-xs bg-gray-50 rounded-lg px-3 py-2 transition-all hover:bg-gray-100"
                 >
-                  {renderIcon(feature.icon)}
+                  {renderIcon(feature.icon as FeatureIconName)}
                   <span>{feature.text}</span>
                 </div>
               ))}

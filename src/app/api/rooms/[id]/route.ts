@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import Request from "next/server";
-import Room, { IRoom } from "../../../../../models/Room";
+import Room from "../../../../../models/Room";
 import { connectDB } from "@/lib/connectDB";
 
 // GET a single room by ID
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
@@ -17,7 +17,7 @@ export async function GET(
       return NextResponse.json("Room not found.", { status: 404 });
     }
     return NextResponse.json(room, { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json("Failed to fetch room.", { status: 500 });
   }
 }
@@ -25,12 +25,13 @@ export async function GET(
 // PUT (Update) a single room by ID
 export async function PUT(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
     const body = await request.json();
-    const updatedRoom = await Room.findByIdAndUpdate(params.id, body, {
+    const { id } = await params;
+    const updatedRoom = await Room.findByIdAndUpdate(id, body, {
       new: true,
       runValidators: true,
     });
@@ -38,8 +39,12 @@ export async function PUT(
       return NextResponse.json("Room not found.", { status: 404 });
     }
     return NextResponse.json(updatedRoom, { status: 200 });
-  } catch (error: any) {
-    return NextResponse.json(`Failed to update room: ${error.message}`, {
+  } catch (error: unknown) {
+    let message = "Failed to update room";
+    if (error instanceof Error) {
+      message = error.message;
+    }
+    return NextResponse.json(`${message}`, {
       status: 400,
     });
   }
@@ -48,16 +53,17 @@ export async function PUT(
 // DELETE a single room by ID
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await connectDB();
-    const deletedRoom = await Room.findByIdAndDelete(params.id);
+    const { id } = await params;
+    const deletedRoom = await Room.findByIdAndDelete(id);
     if (!deletedRoom) {
       return NextResponse.json("Room not found.", { status: 404 });
     }
     return NextResponse.json("Room deleted successfully.", { status: 200 });
-  } catch (error) {
+  } catch {
     return NextResponse.json("Failed to delete room.", { status: 500 });
   }
 }

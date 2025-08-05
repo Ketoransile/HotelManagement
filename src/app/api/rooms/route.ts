@@ -11,7 +11,13 @@ export async function GET() {
     console.log("Rooms from /api/rooms/route.ts", rooms);
     return NextResponse.json(rooms, { status: 200 });
   } catch (error) {
-    return NextResponse.json("Failed to fetch rooms.", { status: 500 });
+    console.log("unknown errors", error);
+    return NextResponse.json(
+      { message: "Failed to fetch rooms.", error: error },
+      {
+        status: 500,
+      }
+    );
   }
 }
 
@@ -22,9 +28,12 @@ export async function POST(request: Request) {
     const body = await request.json();
     const newRoom: IRoom = await Room.create(body);
     return NextResponse.json(newRoom, { status: 201 });
-  } catch (error: any) {
-    return NextResponse.json(`Failed to create room: ${error.message}`, {
-      status: 400,
-    });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return NextResponse.json(`Failed to create room: ${error.message}`, {
+        status: 400,
+      });
+    }
+    return NextResponse.json("Failed to create room.", { status: 500 });
   }
 }
