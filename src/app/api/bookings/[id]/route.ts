@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import Booking from "../../../../../models/Booking";
 import { connectDB } from "@/lib/connectDB";
+import "../../../../../models/Room";
 
 // GET a single booking by ID
 export async function GET(
@@ -12,6 +13,8 @@ export async function GET(
     await connectDB();
     const { id } = await params;
     const booking = await Booking.findById(id).populate("room");
+    // .populate("user");
+    console.log("fetched Booking from db in route.ts is ", booking);
     if (!booking) {
       return NextResponse.json("Booking not found.", { status: 404 });
     }
