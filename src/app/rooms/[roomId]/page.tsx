@@ -220,7 +220,8 @@ const RoomDetailPage = async ({
             Book Your Stay
           </h2>
           <div className="bg-gray-50 rounded-xl p-6 md:p-8">
-            <BookingForm room={room} userId={userId} />
+            {/* <BookingForm room={room} userId={userId} /> */}
+            <BookingForm room={room} />
           </div>
         </section>
 

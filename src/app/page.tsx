@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
         <Services />
         <FeaturedRooms />
-        <PopularDishes />
+        {/* <PopularDishes /> */}
         <Testimonials />
         <WhyChooseUs />
         <NewsletterSection />
