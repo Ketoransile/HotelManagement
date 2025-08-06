@@ -8,8 +8,10 @@ export async function GET() {
   try {
     await connectDB();
     const rooms: IRoom[] = await Room.find({});
-    console.log("Rooms from /api/rooms/route.ts", rooms);
-    return NextResponse.json(rooms, { status: 200 });
+    // console.log("Rooms from /api/rooms/route.ts", rooms);
+    return NextResponse.json(rooms, {
+      status: 200,
+    });
   } catch (error) {
     console.log("unknown errors", error);
     return NextResponse.json(

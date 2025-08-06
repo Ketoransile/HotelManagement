@@ -1,31 +1,39 @@
 // models/Order.ts
-import mongoose, { Schema, Document } from "mongoose";
-import type { IFood } from "./Food"; // Assuming Food model is in a file named Food.ts
+import mongoose, { Schema, Document, Types } from "mongoose";
+import type { IFood } from "./Food";
 
-// Define a TypeScript interface for the Order document
-export interface IOrder extends Document {
-  user: mongoose.Schema.Types.ObjectId;
-  items: Array<{
-    foodItem: mongoose.Schema.Types.ObjectId | IFood;
+// Interface for input data or internal logic
+export interface IOrderSchema {
+  user: Types.ObjectId;
+  booking: Types.ObjectId; // Link to hotel booking
+  items: {
+    foodItem: Types.ObjectId | IFood;
     quantity: number;
-  }>;
+    notes?: string;
+  }[];
   totalPrice: number;
   status: "Pending" | "Processing" | "Delivered" | "Cancelled";
 }
 
-const orderSchema: Schema<IOrder> = new mongoose.Schema(
+// Mongoose document interface (includes _id, timestamps, etc.)
+export interface IOrder extends IOrderSchema, Document {}
+
+const orderSchema = new Schema<IOrder>(
   {
-    // Reference to the user who made the order
     user: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-    // Array of food items in the order
+    booking: {
+      type: Schema.Types.ObjectId,
+      ref: "Booking",
+      required: true,
+    },
     items: [
       {
         foodItem: {
-          type: mongoose.Schema.Types.ObjectId,
+          type: Schema.Types.ObjectId,
           ref: "Food",
           required: true,
         },
@@ -33,6 +41,9 @@ const orderSchema: Schema<IOrder> = new mongoose.Schema(
           type: Number,
           required: true,
           min: 1,
+        },
+        notes: {
+          type: String,
         },
       },
     ],
@@ -43,9 +54,9 @@ const orderSchema: Schema<IOrder> = new mongoose.Schema(
     },
     status: {
       type: String,
-      required: true,
       enum: ["Pending", "Processing", "Delivered", "Cancelled"],
       default: "Pending",
+      required: true,
     },
   },
   {
@@ -53,7 +64,7 @@ const orderSchema: Schema<IOrder> = new mongoose.Schema(
   }
 );
 
-// Prevent mongoose from recreating models in development mode
+// Prevent model overwrite on hot reload (Next.js)
 const Order =
   mongoose.models.Order || mongoose.model<IOrder>("Order", orderSchema);
 

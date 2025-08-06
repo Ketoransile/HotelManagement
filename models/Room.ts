@@ -4,6 +4,7 @@ import mongoose, { Document, Schema } from "mongoose";
 // Interface for the images
 export interface IImage {
   url: string;
+  isPrimary?: boolean;
 }
 
 // Interface for the data object without Mongoose properties
@@ -25,7 +26,13 @@ const RoomSchema: Schema = new Schema({
   roomType: { type: String, required: true },
   price: { type: Number, required: true },
   description: { type: String, required: true },
-  images: [{ url: String }],
+  images: [
+    {
+      url: { type: String, required: true },
+      isPrimary: { type: Boolean, default: false },
+      _id: false,
+    },
+  ],
   maxOccupancy: { type: Number, required: true },
   amenities: [{ type: String }],
 });

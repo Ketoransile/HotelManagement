@@ -14,6 +14,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -37,6 +38,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -60,6 +62,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -83,6 +86,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/18413695/pexels-photo-18413695/free-photo-of-a-beautiful-resort-with-a-pool-and-palm-trees.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -106,6 +110,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -134,6 +139,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -157,6 +163,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -180,6 +187,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/1400262/pexels-photo-1400262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -203,6 +211,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/18413695/pexels-photo-18413695/free-photo-of-a-beautiful-resort-with-a-pool-and-palm-trees.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -226,6 +235,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/5997960/pexels-photo-5997960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/5997960/pexels-photo-5997960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -249,6 +259,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -295,6 +306,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/1400262/pexels-photo-1400262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -318,6 +330,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/453201/pexels-photo-453201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -370,6 +383,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -393,6 +407,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -416,6 +431,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/1400262/pexels-photo-1400262.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -439,6 +455,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/18413695/pexels-photo-18413695/free-photo-of-a-beautiful-resort-with-a-pool-and-palm-trees.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -462,6 +479,7 @@ const rooms: IRoomSchema[] = [
     images: [
       {
         url: "https://images.pexels.com/photos/5997960/pexels-photo-5997960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        isPrimary: true,
       },
       {
         url: "https://images.pexels.com/photos/5997960/pexels-photo-5997960.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",

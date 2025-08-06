@@ -1,6 +1,5 @@
 // models/Booking.ts
 import mongoose, { Document, Schema } from "mongoose";
-import { IRoom } from "./Room"; // Import the IRoom interface
 
 // --- INTERFACES ---
 
@@ -8,7 +7,7 @@ import { IRoom } from "./Room"; // Import the IRoom interface
 // This is useful for type-checking data being passed into Mongoose functions (e.g., in a request body).
 export interface IBookingSchema {
   user: mongoose.Schema.Types.ObjectId;
-  room: mongoose.Schema.Types.ObjectId | IRoom;
+  room: mongoose.Schema.Types.ObjectId;
   checkInDate: Date;
   checkOutDate: Date;
   totalPrice: number;
