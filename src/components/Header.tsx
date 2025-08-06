@@ -20,7 +20,7 @@ import { UserMenu } from "./UserMenu";
 const NAV_ITEMS = [
   { name: "Home", href: "/" },
   { name: "Rooms", href: "/rooms" },
-  { name: "Dining", href: "/dining" },
+  // { name: "Dining", href: "/dining" },
   { name: "About Us", href: "/about" },
   { name: "Blog", href: "/blog" },
 ];
